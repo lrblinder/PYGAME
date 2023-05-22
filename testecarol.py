@@ -3,18 +3,17 @@ import pygame
 pygame.init()
 pygame.mixer.init()
 
-WIDTH = 600
-HEIGHT = 600
-LADO = 100
+WIDTH = 700
+HEIGHT = 700
 window = pygame.display.set_mode((WIDTH, HEIGHT))
-cor_preta = (0,0,0)
-window.fill(cor_preta)
+cor_branca = (250,250,250)
+window.fill(cor_branca)
 pygame.display.set_caption('ARE YOU A GENIUS?')
 
 
 # iniciar assets
 assets = {}
-assets['verde_ligado']=pygame.image.load('quadrados/quadrado_verde_claro.png').convert_alpha()
+assets['verde_ligado']=pygame.image.load('quadrados/quadrado verde claro.png').convert_alpha()
 assets['verde_ligado'] = pygame.transform.scale(assets['verde_ligado'], (LADO, LADO))
 assets['verde_desligado']=pygame.image.load('quadrados/quadrado verde escuro.png').convert_alpha()
 assets['verde_desligado'] = pygame.transform.scale(assets['verde_desligado'], (LADO, LADO))
@@ -31,12 +30,6 @@ assets['vermelho_desligado'] = pygame.transform.scale(assets['vermelho_desligado
 assets['vermelho_ligado']=pygame.image.load('quadrados/vermelho claro.jpg').convert_alpha()
 assets['vermelho_ligado'] = pygame.transform.scale(assets['vermelho_ligado'], (LADO, LADO))
 
-
-cor_cinza = (100,100,100)
-pygame.draw.circle(window,cor_cinza,(300,300),75)
-
-cor_preta = (0,0,0)
-pygame.draw.circle(window,cor_preta,(300,300),70)
 
 
 class Cores(pygame.sprite.Sprite):
