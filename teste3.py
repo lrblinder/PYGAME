@@ -8,12 +8,14 @@ HEIGHT = 700
 LADO = 250
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 cor_branca = (250,250,250)
+cor_preta = (0,0,0)
 window.fill(cor_branca)
 pygame.display.set_caption('ARE YOU A GENIUS?')
 
 font = pygame.font.SysFont(None, 70)
 text = font.render('ARE YOU A', True, (0, 0, 0))
 text2 = font.render('GENIUS', True, (0, 0, 255))
+pygame.draw.rect(window, cor_preta, (40, 140, 520, 520), 10)
 
 # iniciar assets
 # assets = {}
@@ -74,7 +76,7 @@ while True:
     
     window.blit(text, (85, 10))
     window.blit(text2, (375, 10))
-    pygame.display.update()
+    
 
 
     #mouse
@@ -83,9 +85,20 @@ while True:
 
     if mouse [0]>50 and mouse[0]<300 and mouse[1] < 650 and mouse[1]>400:
         window.blit(amarelo_ligado, (50, 400))#quadrado inferior esquerdo
-    elif mouse [0]>300 and mouse[0]<550 and mouse[1]<650 and mouse[1]>400:
+    else:
+        window.blit(amarelo_desligado, (50, 400))
+    if mouse [0]>300 and mouse[0]<550 and mouse[1]<650 and mouse[1]>400:
         window.blit(azul_ligado, (300, 400))#quadrado inferior direito
-    elif mouse[0]>50 and mouse[0]<300 and mouse[1]<400 and mouse[1]>150:
+    else:
+        window.blit(azul_desligado, (300, 400))
+    if mouse[0]>50 and mouse[0]<300 and mouse[1]<400 and mouse[1]>150:
         window.blit(verde_ligado, (50, 150))#quadrado superior esquerdo
-    elif mouse[0]>300 and mouse[0]<550 and mouse[1]<400 and mouse[1]>150:
+    else:
+        window.blit(verde_desligado, (50, 150))
+    if mouse[0]>300 and mouse[0]<550 and mouse[1]<400 and mouse[1]>150:
         window.blit(vermelho_ligado, (300, 150))#quadrado superior direito
+    else:
+        window.blit(vermelho_desligado, (300, 150))
+    
+
+    pygame.display.update()
