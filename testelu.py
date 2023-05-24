@@ -1,6 +1,8 @@
 import pygame
 import time
+import random
 from random import randrange
+
 
 pygame.init()
 pygame.mixer.init()
@@ -78,7 +80,7 @@ jogada_do_player = []
 
 repeticao_cores=0
 sequencia_jogo=[]
-
+cont = 0
 
 while True:
     for event in pygame.event.get():
@@ -99,9 +101,9 @@ while True:
 
 
     #repetição de cores
-    if repeticao_cores == False:
+    if repeticao_cores == 0:
         inicio(window)
-        time.sleep(False)
+        time.sleep(0)
         for i in range(len(sequencia_jogo)):
             if sequencia_jogo[i] == 0:
                 window.blit(verde_ligado, (50, 150))
@@ -111,11 +113,30 @@ while True:
                 window.blit(amarelo_ligado, (50, 400))
             if sequencia_jogo[i] == 3:            
                 window.blit(azul_ligado, (300, 400))
-
+            print(i)
             time.sleep(1)
             inicio(window)
             time.sleep(0.5)
         repeticao_cores=0
+
+        #botao
+    if cont==len(jogada_do_player):
+        repeticao_cores=1
+        sequencia_jogo.append(random.randrange(4))
+        jogada_do_player=[]
+        print(sequencia_jogo)
+
+
+    for numero in sequencia_jogo:
+        print(numero)
+        if numero == 0:
+            window.blit(verde_ligado, (50, 150))
+        elif numero == 1:
+            window.blit(vermelho_ligado, (300, 150))
+        elif numero ==2:
+            window.blit(amarelo_ligado, (50, 400))
+        elif numero ==3:
+            window.blit(azul_ligado, (300, 400)) 
 
 
 
@@ -150,7 +171,7 @@ while True:
             print(jogada_do_player)
     else:
         window.blit(vermelho_desligado, (300, 150))
-    
+    cont+=1
     click_on_off = click[0]
 
     pygame.display.update()
