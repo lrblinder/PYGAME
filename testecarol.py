@@ -43,36 +43,13 @@ vermelho_ligado=pygame.image.load('quadrados_claros/vermelho claro.jpg').convert
 vermelho_ligado= pygame.transform.scale(vermelho_ligado, (LADO, LADO))
 
 
-def inicio(window):
+# def inicio(window):
 
 
-
-
-# iniciar assets
-# assets = {}
-# assets['verde_ligado']=pygame.image.load('quadrados/quadrado verde claro.png').convert_alpha()
-# assets['verde_ligado'] = pygame.transform.scale(assets['verde_ligado'], (LADO, LADO))
-# assets['verde_desligado']=pygame.image.load('quadrados/quadrado verde escuro.png').convert_alpha()
-# assets['verde_desligado'] = pygame.transform.scale(assets['verde_desligado'], (LADO, LADO))
-# assets['azul_desligado']=pygame.image.load('quadrados/quadrado azul escuro.png').convert_alpha()
-# assets['azul_desligado'] = pygame.transform.scale(assets['azul_desligado'], (LADO, LADO))
-# assets['azul_ligado']=pygame.image.load('quadrados/quadrado azul claro.png').convert_alpha()
-# assets['azul_ligado'] = pygame.transform.scale(assets['azul_ligado'], (LADO, LADO))
-# assets['amarelo_desligado']=pygame.image.load('quadrados/amarelo escuro.png').convert_alpha()
-# assets['amarelo_desligado'] = pygame.transform.scale(assets['amarelo_desligado'], (LADO, LADO))
-# assets['amarelo_ligado']=pygame.image.load('quadrados/amarelo claro.jpg').convert_alpha()
-# assets['amarelo_ligado'] = pygame.transform.scale(assets['amarelo_ligado'], (LADO, LADO))
-# assets['vermelho_desligado']=pygame.image.load('quadrados/vermelho escuro.jpg').convert_alpha()
-# assets['vermelho_desligado'] = pygame.transform.scale(assets['vermelho_desligado'], (LADO, LADO))
-# assets['vermelho_ligado']=pygame.image.load('quadrados/vermelho claro.jpg').convert_alpha()
-# assets['vermelho_ligado'] = pygame.transform.scale(assets['vermelho_ligado'], (LADO, LADO))
-
-
-
-    class cores(pygame.sprite.Sprite):
-        def __init__(self, quadrados_claros, x, y):
-            pygame.sprite.Sprite.__init__(self)
-            self.image = quadrados_claros
+#     class cores(pygame.sprite.Sprite):
+#         def __init__(self, quadrados_claros, x, y):
+#             pygame.sprite.Sprite.__init__(self)
+#             self.image = quadrados_claros
             
 
 click_on_off = False
@@ -100,27 +77,6 @@ while True:
     click = pygame.mouse.get_pressed()
     #print(click)
 
-
-    #repetição de cores
-    # if repeticao_cores == 0:
-    #     inicio(window)
-    #     time.sleep(0)
-    #     for i in range(len(sequencia_jogo)):
-    #         if sequencia_jogo[i] == 0:
-    #             window.blit(verde_ligado, (50, 150))
-    #         if sequencia_jogo[i] == 1:
-    #             window.blit(vermelho_ligado, (300, 150))
-    #         if sequencia_jogo[i] == 2:
-    #             window.blit(amarelo_ligado, (50, 400))
-    #         if sequencia_jogo[i] == 3:            
-    #             window.blit(azul_ligado, (300, 400))
-    #         print(i)
-    #         time.sleep(1)
-    #         inicio(window)
-    #         time.sleep(0.5)
-    #     repeticao_cores=0
-
-        #botao
     if cont==len(jogada_do_player) and k==0:
         repeticao_cores+=1
         sequencia_jogo.append(random.randrange(4))
@@ -128,20 +84,31 @@ while True:
         k+=1
     k=0
 
-
+    
     # for numero in sequencia_jogo:
-    #     print(numero)
     #     if numero == 0:
     #         window.blit(verde_ligado, (50, 150))
+    #         window.blit(verde_desligado, (50, 150))
     #     elif numero == 1:
     #         window.blit(vermelho_ligado, (300, 150))
+    #         time.sleep(1)
+    #         window.blit(vermelho_desligado, (300, 150))
+    #         print("entrou 1")
     #     elif numero ==2:
+    #         print("2")
     #         window.blit(amarelo_ligado, (50, 400))
+    #         time.sleep(1)
+    #         window.blit(amarelo_desligado, (50, 400))
+    #         print("entrou 2")
     #     elif numero ==3:
-    #         window.blit(azul_ligado, (300, 400)) 
+    #         print("3")
+    #         window.blit(azul_ligado, (300, 400))
+    #         time.sleep(1)
+    #         window.blit(azul_desligado, (300, 400))
+    #         print("entrou 3")
 
-
-
+    #     repeticao_cores = 0
+    
 
     if mouse [0]>50 and mouse[0]<300 and mouse[1] < 650 and mouse[1]>400:
         window.blit(amarelo_ligado, (50, 400))#quadrado inferior esquerdo
@@ -173,6 +140,18 @@ while True:
             print(jogada_do_player)
     else:
         window.blit(vermelho_desligado, (300, 150))
+
+
+    if len(jogada_do_player) == len(sequencia_jogo):
+        for cor_jogador in jogada_do_player:
+            for cor_do_jogo in sequencia_jogo:
+                if cor_jogador != cor_do_jogo:
+                    print("Você perdeu!")
+                    pygame.QUIT
+                    pygame.quit()
+                    quit()
+
+    
     cont+=1
     click_on_off = click[0]
 
