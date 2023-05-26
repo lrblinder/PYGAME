@@ -177,3 +177,16 @@ while True:
     click_on_off = click[0]
 
     pygame.display.update()
+
+
+
+    # Gerar uma lista com cores aleatórias
+    
+
+    # Imprimir as cores
+
+    # Jogador joga 
+
+    # Você verifica se o jogador acertou a ordem 
+
+    # Se acertou continua, caso não tenha ele termina 
