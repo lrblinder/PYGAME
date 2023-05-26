@@ -121,9 +121,8 @@ while True:
 
         #botao
     if cont==len(jogada_do_player):
-        repeticao_cores=1
+        repeticao_cores+=1
         sequencia_jogo.append(random.randrange(4))
-        jogada_do_player=[]
         print(sequencia_jogo)
 
 

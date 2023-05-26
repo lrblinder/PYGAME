@@ -61,11 +61,17 @@ vermelho_ligado= pygame.transform.scale(vermelho_ligado, (LADO, LADO))
 
 
 
-class cores(pygame.sprite.Sprite):
-    def __init__(self, quadrados_claros, x, y):
+class Quadrado(pygame.sprite.Sprite):
+    def __init__(self, img, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = quadrados_claros
-        
+        self.image = img
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+        def update(self):
+            pass
+      
 
 click_on_off = False
 jogada_do_player = []
