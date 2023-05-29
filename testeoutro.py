@@ -54,16 +54,19 @@ while True:
         for cor in lista_cores_aleatorias:
             if cor == 0:
                 window.blit(azul_ligado, (0, 0))
+                simon_sound.play()
                 
             elif cor == 1:
                 window.blit(vermelho_ligado, (0, 0))
+                simon_sound.play()
                 
             elif cor == 2:
                 window.blit(amarelo_ligado, (0, 0))
-                
+                simon_sound.play()
 
             elif cor == 3:
                 window.blit(verde_ligado, (0, 0))
+                simon_sound.play()
                 
             pygame.display.update()
             time.sleep(1)
