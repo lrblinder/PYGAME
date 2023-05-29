@@ -127,6 +127,17 @@ while True:
                     pygame.display.update()
                     cores_escolhidas += 1
 
+            i = 0
+            while i < len(jogada_do_player):
+                if jogada_do_player[i] != lista_cores_aleatorias[i]:
+                    print("Game Over")
+                    window.blit(text, (85, 10))
+                    pygame.display.update()
+                    time.sleep(2)
+                    pygame.quit()
+                    quit()
+                i += 1
+
             if cores_escolhidas == len(lista_cores_aleatorias):
                 if jogada_do_player != lista_cores_aleatorias:
                     print("Game Over")
@@ -135,7 +146,7 @@ while True:
                     time.sleep(2)
                     pygame.quit()
                     quit()
-                   
+                
                 else:
                     cores_escolhidas = 0
                     jogada_do_player = []
@@ -155,3 +166,4 @@ while True:
                         window.blit(tela_normal, (0, 0))
                         pygame.display.update()
                         time.sleep(1)
+                
