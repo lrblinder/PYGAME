@@ -135,7 +135,7 @@ lista_cores_aleatorias = []
 
 
     # Gerar uma lista com cores aleatórias
-    lista_cores_aleatorias = []
+lista_cores_aleatorias = []
 
 
     # Imprimir as cores
