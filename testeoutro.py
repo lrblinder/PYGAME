@@ -14,7 +14,7 @@ pygame.display.set_caption('ARE YOU A GENIUS?')
 
 
 #música
-simon_sound=pygame.mixer.Sound()
+simon_sound=pygame.mixer.Sound("sons/button.mp3")
 
 font = pygame.font.SysFont(None, 70)
 text = font.render('GAME OVER', True, (0, 0, 255))
