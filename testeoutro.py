@@ -12,6 +12,10 @@ cor_branca = (250, 250, 250)
 cor_preta = (0, 0, 0)
 pygame.display.set_caption('ARE YOU A GENIUS?')
 
+
+#música
+simon_sound=pygame.mixer.Sound()
+
 font = pygame.font.SysFont(None, 70)
 text = font.render('GAME OVER', True, (0, 0, 255))
 
@@ -85,6 +89,7 @@ while True:
                     jogada_do_player.append(2)
                     print(jogada_do_player)
                     window.blit(amarelo_ligado, (0, 0))
+                    simon_sound.play()
                     pygame.display.update()
                     time.sleep(1)
                     window.blit(tela_normal, (0, 0))
@@ -97,6 +102,7 @@ while True:
                     jogada_do_player.append(3)
                     print(jogada_do_player)
                     window.blit(verde_ligado, (0, 0))
+                    simon_sound.play()
                     pygame.display.update()
                     time.sleep(1)
                     window.blit(tela_normal, (0, 0))
@@ -109,6 +115,7 @@ while True:
                     jogada_do_player.append(0)
                     print(jogada_do_player)
                     window.blit(azul_ligado, (0, 0))
+                    simon_sound.play()
                     pygame.display.update()
                     time.sleep(1)
                     window.blit(tela_normal, (0, 0))
@@ -121,6 +128,7 @@ while True:
                     jogada_do_player.append(1)
                     print(jogada_do_player)
                     window.blit(vermelho_ligado, (0, 0))
+                    simon_sound.play()
                     pygame.display.update()
                     time.sleep(1)
                     window.blit(tela_normal, (0, 0))
