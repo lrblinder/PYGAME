@@ -1,1 +1,13 @@
-descrever o jogo
+"ARE YOU A GENIUS" foi um jogo desenvolvido pelas alunas Anita Jafet, Carolina Toscani e Luisa Blinder para o trabalho final da disciplina "Dsoft" do Insper, utilizando o Pygame.
+
+- SOBRE O JOGO:
+    Nosso jogo simula o jogo já existente "Simon", também conhecido como "Genius" no Brasil. Nele, cores aleatórias piscarão em uma determinada sequência(sendo que a cada rodada aumenta uma cor na sequência). Quando as cores pararem de piscar é vez do jogador fazer sua jogada. O objetivo é que o jogador clique nas cores, na mesma sequência em que elas ascenderam anteriormente. Caso o jogador clique na cor errada, o jogo se encerra.
+
+- INSTRUÇÕES:
+    Quando as cores terminarem de piscar, é necessário esperar dois segundos e iniciar a jogada clicando no botão que desejar. O botão que o jogador clicar irá se ascender, evidenciando a cor que o jogador escolheu. 
+
+-ARQUIVOS:
+    - O arquivo que contém o código com o jogo que deverá ser executado se chama "jogo_oficial.py";
+    - Os arquivos dispostos na pasta "teste" evidenciam as etapas de execução do trabalaho, porém não deverão ser utilizados para a execução do jogo.
+
+
