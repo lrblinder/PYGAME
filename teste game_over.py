@@ -16,7 +16,7 @@ pygame.display.set_caption('ARE YOU A GENIUS?')
 #música
 simon_sound=pygame.mixer.Sound("sons/button.mp3")
 
-game_over = pygame.image.load('fotos gerais/on.png')
+game_over = pygame.image.load('fotos gerais/on (3).png')
 game_over = pygame.transform.scale(game_over, (WIDTH, HEIGHT))
 
 tela_normal = pygame.image.load('quadrados/Cores iniciais.png')
