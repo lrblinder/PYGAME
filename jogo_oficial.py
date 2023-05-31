@@ -53,3 +53,37 @@ jogada_do_player = []
 sequencia_jogo = []
 cores_escolhidas = 0
 lista_cores_aleatorias = []
+
+#cria função do menu
+def display_menu():
+    window.blit(tela_inicial, (0,0))
+    pygame.display.update()
+
+#cria função das instruções
+def instrucoes():
+    window.blit(tela_instrucoes, (0,0))
+    pygame.display.update()
+
+#cria função que pisca a cor
+def pisca_cor(cor):
+    window.blit(cor, (0, 0))
+    simon_sound.play()
+
+#cria função da jogada do player
+def jogada_do_jogador(cor_ascender,num_cor):
+    jogada_do_player.append(num_cor)
+    window.blit(cor_ascender, (0, 0))
+    simon_sound.play()
+    pygame.display.update()
+    time.sleep(1)
+    window.blit(tela_normal, (0, 0))
+    pygame.display.update()
+
+#cria a função da tela final "game over"
+def tela_game_over():
+    window.blit(game_over, (20, 0))
+    pygame.display.update()
+    time.sleep(2)
+    pygame.quit()
+    quit()
+
