@@ -127,3 +127,30 @@ while True:
         if cores_escolhidas == len(lista_cores_aleatorias): #verifica se está na hora de sortear uma cor nova
             numero = random.randint(0, 3) #sorteia uma cor aleatória
             lista_cores_aleatorias.append(numero) #adiciona o número correspondente à cor aleatória na lista 
+            #LOOP QUE FAZ AS CORES PISCAREM (percorre a lista de cores aleatórias e corresponde cada número da lista a uma cor, inserindo uma nova tela)
+            for cor in lista_cores_aleatorias:
+                if cor == 0: 
+                    pisca_cor(azul_ligado)
+                elif cor == 1:
+                    pisca_cor(vermelho_ligado)
+                elif cor == 2:
+                    pisca_cor(amarelo_ligado)
+                elif cor == 3:
+                    pisca_cor(verde_ligado)
+                    
+                pygame.display.update()
+                time.sleep(0.8)
+                window.blit(tela_normal, (0, 0))
+                pygame.display.update()
+                time.sleep(0.8)
+
+            jogando = True
+            #LOOP DA JOGADA DO JOGADOR
+            while jogando:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        quit()
+
+                mouse = pygame.mouse.get_pos() #inicializa mouse
+                click = pygame.mouse.get_pressed() #inicializa click
