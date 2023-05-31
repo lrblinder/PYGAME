@@ -154,3 +154,17 @@ while True:
 
                 mouse = pygame.mouse.get_pos() #inicializa mouse
                 click = pygame.mouse.get_pressed() #inicializa click
+
+                #CHECA SE O CLICK FOI NO BOTÃO DE COR AMARELA
+                if mouse[0] > 201 and mouse[0] < 292 and mouse[1] < 520 and mouse[1] > 360:
+                    if click[0] == True:
+                        cor = 2
+                        jogada_do_jogador(amarelo_ligado, cor) #coloca imagem do amarelo piscando
+                        cores_escolhidas += 1
+
+                #CHECA SE O CLICK FOI NO BOTÃO DE COR VERDE
+                if mouse[0] > 305 and mouse[0] < 396 and mouse[1] < 520 and mouse[1] > 360:
+                    if click[0] == True:
+                        cor = 3
+                        jogada_do_jogador(verde_ligado, cor) #coloca imagem do verde piscando
+                        cores_escolhidas += 1
