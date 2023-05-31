@@ -182,3 +182,41 @@ while True:
                         cor = 1
                         jogada_do_jogador(vermelho_ligado, cor) #coloca imagem do vermelho piscando
                         cores_escolhidas += 1
+                #cria variável dentro do loop principa do jogo.
+                i = 0
+                #cria loop while para o player poder jogar mais vezes.
+                while i < len(jogada_do_player):
+                    #bloco if que verifica se cada jogada do player é igual a cor escolhida aleatoriamente pelo jogo.
+                    if jogada_do_player[i] != lista_cores_aleatorias[i]:
+                        tela_game_over()
+                    i += 1
+                #bloco if que verfica se as listas de cores aleatorias e a de cores escolhidas pelo player são iguais.
+                if cores_escolhidas == len(lista_cores_aleatorias):
+                    #caso a jogada e a lista de cores aleatórias sejam diferentes.
+                    if jogada_do_player != lista_cores_aleatorias:
+                        tela_game_over()
+                    #caso a jogada e a lista de cores aleatórias sejam iguais.
+                    else:
+                        time.sleep(1)
+                        cores_escolhidas = 0
+                        jogada_do_player = []
+                        lista_cores_aleatorias.append(random.randint(0, 3))
+                        print(lista_cores_aleatorias)
+                        for cor in lista_cores_aleatorias:
+                            if cor == 0:
+                                window.blit(azul_ligado, (0, 0))
+                                simon_sound.play()
+                            elif cor == 1:
+                                window.blit(vermelho_ligado, (0, 0))
+                                simon_sound.play()
+                            elif cor == 2:
+                                window.blit(amarelo_ligado, (0, 0))
+                                simon_sound.play()
+                            elif cor == 3:
+                                window.blit(verde_ligado, (0, 0))
+                                simon_sound.play()
+                            pygame.display.update()
+                            time.sleep(1)
+                            window.blit(tela_normal, (0, 0))
+                            pygame.display.update()
+                            time.sleep(1)        
