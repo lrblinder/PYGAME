@@ -9,5 +9,6 @@
 -ARQUIVOS:
     - O arquivo que contém o código com o jogo que deverá ser executado se chama "jogo_oficial.py";
     - Os arquivos dispostos na pasta "teste" evidenciam as etapas de execução do trabalaho, porém não deverão ser utilizados para a execução do jogo.
+    - O jogo foi inspirado no link de criação do jogo Simon, podendo ser acessado aqui: https://www.youtube.com/watch?v=MT6RpuPKSyw
 
 
