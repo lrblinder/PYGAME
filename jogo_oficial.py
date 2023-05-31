@@ -87,3 +87,26 @@ def tela_game_over():
     pygame.quit()
     quit()
 
+game_state = "menu" #define status do jogo
+
+#INICIA LOOP PRINCIPAL DO JOGO
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+    
+    #VERIFICA CONDIÇÃO E ABRE A TELA DO MENU:
+    if game_state == "menu":
+        display_menu()
+        mouse_menu = pygame.mouse.get_pos()
+        click_menu = pygame.mouse.get_pressed()
+
+        #VERIFICA ONDE O JOGADOR VAI CLICAR
+        if mouse_menu[0] > 190 and mouse_menu[0] < 410 and mouse_menu[1] < 369 and mouse_menu[1] > 251:
+            if click_menu[0] == True:
+                game_state = "jogando" #se o jogador clicar no botão "jogar" atualiza o status do jogo para "jogando"
+                
+        if mouse_menu[0] > 190 and mouse_menu[0] < 410 and mouse_menu[1] < 522 and mouse_menu[1] > 404:
+            if click_menu[0] == True:
+                game_state = "instruções" #se o jogador clicar no botão "instruções" atualiza o status do jogo para "innstruções"
