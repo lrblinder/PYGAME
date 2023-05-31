@@ -65,8 +65,14 @@ def jogada_do_jogador(cor_ascender,num_cor):
     time.sleep(1)
     window.blit(tela_normal, (0, 0))
     pygame.display.update()
-    
 
+def tela_game_over():
+    window.blit(game_over, (20, 0))
+    pygame.display.update()
+    time.sleep(2)
+    pygame.quit()
+    quit()
+    
 game_state = "menu"
 while True:
     for event in pygame.event.get():
@@ -106,13 +112,10 @@ while True:
             for cor in lista_cores_aleatorias:
                 if cor == 0:
                     pisca_cor(azul_ligado)
-                    
                 elif cor == 1:
                     pisca_cor(vermelho_ligado)
-                    
                 elif cor == 2:
                     pisca_cor(amarelo_ligado)
-
                 elif cor == 3:
                     pisca_cor(verde_ligado)
                     
@@ -121,8 +124,6 @@ while True:
                 window.blit(tela_normal, (0, 0))
                 pygame.display.update()
                 time.sleep(1)
-                
-
 
             jogando = True
             while jogando:
@@ -161,22 +162,15 @@ while True:
                 i = 0
                 while i < len(jogada_do_player):
                     if jogada_do_player[i] != lista_cores_aleatorias[i]:
-                        window.blit(game_over, (20, 0))
-                        pygame.display.update()
-                        time.sleep(2)
-                        pygame.quit()
-                        quit()
+                        tela_game_over()
                     i += 1
 
                 if cores_escolhidas == len(lista_cores_aleatorias):
                     if jogada_do_player != lista_cores_aleatorias:
-                        window.blit(game_over, (20, 0))
-                        pygame.display.update()
-                        time.sleep(2)
-                        pygame.quit()
-                        quit()
+                        tela_game_over()
                     
                     else:
+                        time.sleep(1)
                         cores_escolhidas = 0
                         jogada_do_player = []
                         lista_cores_aleatorias.append(random.randint(0, 3))
