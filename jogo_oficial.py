@@ -168,3 +168,17 @@ while True:
                         cor = 3
                         jogada_do_jogador(verde_ligado, cor) #coloca imagem do verde piscando
                         cores_escolhidas += 1
+                
+                #CHECA SE O CLICK FOI NO BOTÃO DE COR AZUL
+                if mouse[0] > 201 and mouse[0] < 292 and mouse[1] < 345 and mouse[1] > 185:
+                    if click[0] == True:
+                        cor = 0
+                        jogada_do_jogador(azul_ligado, cor) #coloca imagem do azul piscando
+                        cores_escolhidas += 1
+
+                #CHECA SE O CLICK FOI NO BOTÃO DE COR VERMELHA
+                if mouse[0] > 305 and mouse[0] < 396 and mouse[1] < 345 and mouse[1] > 185:
+                    if click[0] == True:
+                        cor = 1
+                        jogada_do_jogador(vermelho_ligado, cor) #coloca imagem do vermelho piscando
+                        cores_escolhidas += 1
