@@ -72,7 +72,7 @@ def tela_game_over():
     time.sleep(2)
     pygame.quit()
     quit()
-    
+
 game_state = "menu"
 while True:
     for event in pygame.event.get():
@@ -120,10 +120,10 @@ while True:
                     pisca_cor(verde_ligado)
                     
                 pygame.display.update()
-                time.sleep(1)
+                time.sleep(0.8)
                 window.blit(tela_normal, (0, 0))
                 pygame.display.update()
-                time.sleep(1)
+                time.sleep(0.8)
 
             jogando = True
             while jogando:
@@ -177,19 +177,15 @@ while True:
                         print(lista_cores_aleatorias)
                         for cor in lista_cores_aleatorias:
                             if cor == 0:
-                                window.blit(azul_ligado, (0, 0))
-                                simon_sound.play()
+                                pisca_cor(azul_ligado)
                             elif cor == 1:
-                                window.blit(vermelho_ligado, (0, 0))
-                                simon_sound.play()
+                                pisca_cor(vermelho_ligado)
                             elif cor == 2:
-                                window.blit(amarelo_ligado, (0, 0))
-                                simon_sound.play()
+                                pisca_cor(amarelo_ligado)
                             elif cor == 3:
-                                window.blit(verde_ligado, (0, 0))
-                                simon_sound.play()
+                                pisca_cor(verde_ligado)
                             pygame.display.update()
-                            time.sleep(1)
+                            time.sleep(0.8)
                             window.blit(tela_normal, (0, 0))
                             pygame.display.update()
-                            time.sleep(1)
+                            time.sleep(0.8)
