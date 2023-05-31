@@ -110,3 +110,20 @@ while True:
         if mouse_menu[0] > 190 and mouse_menu[0] < 410 and mouse_menu[1] < 522 and mouse_menu[1] > 404:
             if click_menu[0] == True:
                 game_state = "instruções" #se o jogador clicar no botão "instruções" atualiza o status do jogo para "innstruções"
+    
+    # VERIFICA CONDIÇÃO E ABRE A TELA INSTRUÇÕES:
+    elif game_state == "instruções":
+        instrucoes()
+        mouse = pygame.mouse.get_pos() #inicializa o mouse
+        click = pygame.mouse.get_pressed() #inicializa o click
+        
+        if mouse[0] > 433 and mouse[0] < 575 and mouse[1] < 580 and mouse[1] > 503:
+            if click[0] == True:
+                game_state = "menu" #se o jogador clicar no botão "menu" atualiza o status do jogo para "menu"
+
+    #VERIFICA CONDIÇÃO E ABRE A TELA DO JOGO:
+    elif game_state == "jogando":
+        time.sleep(2)
+        if cores_escolhidas == len(lista_cores_aleatorias): #verifica se está na hora de sortear uma cor nova
+            numero = random.randint(0, 3) #sorteia uma cor aleatória
+            lista_cores_aleatorias.append(numero) #adiciona o número correspondente à cor aleatória na lista 
